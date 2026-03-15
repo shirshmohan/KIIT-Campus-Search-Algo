@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KIIT Campus — Graph Search Visualizer</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="app">
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="logo-icon">🗺</div>
+    <h1>KIIT Graph Search Visualizer</h1>
+    <div id="status-badge" class="idle">
+      <div class="dot"></div>
+      <span>Idle</span>
+    </div>
+    <span class="hdr-sub">Bhubaneswar · Odisha · India</span>
+  </header>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+
+    <!-- Algorithm -->
+    <div class="psec">
+      <div class="slbl">Algorithm</div>
+      <div class="chips">
+        <div class="chip active" data-algo="BFS">BFS</div>
+        <div class="chip"        data-algo="DFS">DFS</div>
+        <div class="chip"        data-algo="Dijkstra">Dijkstra</div>
+        <div class="chip"        data-algo="AStar">A*</div>
+      </div>
+    </div>
+
+    <!-- Route -->
+    <div class="psec">
+      <div class="slbl">Route</div>
+      <div class="cg">
+        <label for="sel-start">Start Campus</label>
+        <select id="sel-start"><option value="">— Select start —</option></select>
+      </div>
+      <div class="cg">
+        <label for="sel-end">Destination Campus</label>
+        <select id="sel-end"><option value="">— Select destination —</option></select>
+      </div>
+      <div id="route-status"></div>
+    </div>
+
+    <!-- Speed -->
+    <div class="psec">
+      <div class="slbl">Animation Speed</div>
+      <div class="srow">
+        <span class="spd-lbl">Slow</span>
+        <input type="range" id="spd-slider" min="1" max="100" value="50" />
+        <span class="spd-lbl">Fast</span>
+        <span class="spd-val" id="spd-val">50x</span>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="psec">
+      <button class="btn btn-run"   id="btn-run">▶ Run Algorithm</button>
+      <button class="btn btn-reset" id="btn-reset">↺ Reset Map</button>
+    </div>
+
+    <!-- Stats -->
+    <div class="psec">
+      <div class="slbl">Statistics</div>
+      <div class="sgrid">
+        <div class="sc"><div class="v" id="stat-v">0</div><div class="l">Nodes Visited</div></div>
+        <div class="sc"><div class="v" id="stat-s">0</div><div class="l">Steps</div></div>
+        <div class="sc full"><div class="v" id="stat-d">—</div><div class="l">Road Distance</div></div>
+      </div>
+    </div>
+
+    <!-- Path -->
+    <div class="psec">
+      <div class="slbl">Path Found</div>
+      <div id="path-display">Select start &amp; end, then run…</div>
+    </div>
+
+    <!-- State legend -->
+    <div class="psec">
+      <div class="slbl">Node States</div>
+      <div class="state-legend">
+        <div class="sl-item"><div class="sl-dot" style="background:#00e87a"></div>Start node</div>
+        <div class="sl-item"><div class="sl-dot" style="background:#ff2d55"></div>End node</div>
+        <div class="sl-item"><div class="sl-dot" style="background:#ffd200"></div>Visited</div>
+        <div class="sl-item"><div class="sl-dot" style="background:#a855f7"></div>Frontier</div>
+        <div class="sl-item"><div class="sl-dot" style="background:#00d4ff"></div>Unvisited</div>
+        <div class="sl-item"><div class="sl-dot" style="background:#ff2d55;box-shadow:0 0 5px #ff2d55"></div>Final path</div>
+      </div>
+    </div>
+
+    <!-- Campus legend — clickable -->
+    <div class="psec">
+      <div class="slbl">Campuses — click to select</div>
+      <div class="campus-legend" id="campus-legend"></div>
+    </div>
+
+    <!-- Pseudocode -->
+    <div class="psec">
+      <div class="slbl">Pseudocode</div>
+      <div id="pbox"></div>
+    </div>
+
+    <!-- Log -->
+    <div class="psec">
+      <div class="slbl">Exploration Log</div>
+      <div id="nlog"></div>
+    </div>
+
+  </aside>
+
+  <!-- MAP -->
+  <main id="map-wrap">
+    <div id="map"></div>
+  </main>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
