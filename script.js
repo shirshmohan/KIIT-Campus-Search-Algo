@@ -19,7 +19,7 @@ const CAMPUSES = {
   "Campus 10": { lat: 20.364279, lng: 85.812222, emoji: "👥", desc: "School of Social Sciences" },
   "Campus 11": { lat: 20.359166, lng: 85.822168, emoji: "🧬", desc: "School of Biotechnology" },
   "Campus 12": { lat: 20.355618, lng: 85.820831, emoji: "⚡", desc: "School of Electronics" },
-  "Campus 13": { lat: 20.356679, lng: 85.819119, emoji: "🏅", desc: "Sports Complex" },
+  "Campus 13": { lat: 20.356679, lng: 85.819119, emoji: "🏅", desc: "KSAC-Sports Complex" },
   "Campus 14": { lat: 20.357038, lng: 85.815250, emoji: "📖", desc: "IGNOU Study Centre" },
   "Campus 15": { lat: 20.349957, lng: 85.815743, emoji: "💻", desc: "Old School of CSE" },
   "Campus 16": { lat: 20.362152, lng: 85.823422, emoji: "⚖️", desc: "School of Law" },
