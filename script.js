@@ -3,7 +3,7 @@
    Leaflet.js + Google Maps Satellite + OSM Traffic/Terrain
    OSRM for real road routing — no API key required
    Dual algorithm comparison mode
-   ============================================================ */
+   =========================================================== */
 
 // ── CAMPUS DATA ───────────────────────────────────────────────
 const CAMPUSES = {
